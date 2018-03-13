@@ -4,9 +4,9 @@
   "description": "The Sygic Maps API for JavaScript is a set of programming interfaces that enable developers to build Web applications with feature rich, interactive Sygic Maps at their center.",
   "main": "dist/sygic-maps-services.js",
   "scripts": {
-    "build": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js",
+    "build": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js && npm run test",
     "dev": "webpack --mode development --module-bind js=babel-loader --output-filename sygic-maps-services.js",
-    "test": "mocha --require babel-core/register --colors ./test/inputs/*.test.js",
+    "test": "mocha --require babel-core/register --colors ./test/*/*.test.js",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/inputs/*.test.js"
   },
   "repository": {
