@@ -1,0 +1,49 @@
+{
+  "name": "sygic-maps-services-js",
+  "version": "1.0.0",
+  "description": "The Sygic Maps API for JavaScript is a set of programming interfaces that enable developers to build Web applications with feature rich, interactive Sygic Maps at their center.",
+  "main": "dist/sygic-maps-services.js",
+  "scripts": {
+    "build": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js",
+    "dev": "webpack --mode development --module-bind js=babel-loader --output-filename sygic-maps-services.js",
+    "test": "mocha --require babel-core/register --colors ./test/inputs/*.test.js",
+    "test:watch": "mocha --require babel-core/register --colors -w ./test/inputs/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sygic/sygic-maps-services-js.git"
+  },
+  "keywords": [
+    "sygic",
+    "maps",
+    "api",
+    "routing",
+    "geocoding",
+    "search",
+    "optimization"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": "Sygic a.s.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sygic/sygic-maps-services-js/issues"
+  },
+  "homepage": "https://github.com/Sygic/sygic-maps-services-js/#readme",
+  "dependencies": {
+    "axios": "0.18.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.11"
+  }
+}
