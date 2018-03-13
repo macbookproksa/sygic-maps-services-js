@@ -1,5 +1,7 @@
 sudo: false
 language: node_js
+node_js:
+  - stable
 cache:
   directories:
     - node_modules
@@ -10,6 +12,8 @@ branches:
     - master
 notifications:
   email: false
+install:
+  - npm install
 before_script:
   - npm prune
 script:
