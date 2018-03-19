@@ -8,8 +8,7 @@
     "build": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js && npm run test",
     "dev": "webpack --mode development --module-bind js=babel-loader --output-filename sygic-maps-services.js",
     "test": "mocha --require babel-core/register --colors ./test/*/*.test.js",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
