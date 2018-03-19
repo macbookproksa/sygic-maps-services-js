@@ -1,13 +1,15 @@
 {
-  "name": "sygic-maps-services-js",
-  "version": "1.0.0",
+  "name": "sygic-maps-services",
+  "version": "0.0.0-development",
   "description": "The Sygic Maps API for JavaScript is a set of programming interfaces that enable developers to build Web applications with feature rich, interactive Sygic Maps at their center.",
   "main": "dist/sygic-maps-services.js",
   "scripts": {
+    "commit": "git-cz",
     "build": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js && npm run test",
     "dev": "webpack --mode development --module-bind js=babel-loader --output-filename sygic-maps-services.js",
     "test": "mocha --require babel-core/register --colors ./test/*/*.test.js",
-    "test:watch": "mocha --require babel-core/register --colors -w ./test/inputs/*.test.js"
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "repository": {
     "type": "git",
@@ -41,9 +43,24 @@
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.6.1",
     "babel-register": "6.26.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "commitizen": "^2.9.6",
     "chai": "^4.1.2",
     "mocha": "^5.0.4",
     "webpack": "4.1.1",
-    "webpack-cli": "2.0.11"
+    "webpack-cli": "2.0.12",
+    "semantic-release": "^15.1.2",
+    "travis-deploy-once": "^4.4.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
