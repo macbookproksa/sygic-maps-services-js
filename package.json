@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "commit": "git-cz",
-    "build": "npm run test && npm run dev && npm run prod",
+    "build": "npm run test && npm run dev && npm run prod && npm run build:main",
+    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "prod": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js",
     "dev": "webpack --mode development --module-bind js=babel-loader --output-filename sygic-maps-services.js",
     "test": "mocha --require babel-core/register --colors ./test/*/*.test.js",
