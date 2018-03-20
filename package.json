@@ -2,7 +2,7 @@
   "name": "sygic-maps-services",
   "version": "0.0.0-development",
   "description": "The Sygic Maps API for JavaScript is a set of programming interfaces that enable developers to build Web applications with feature rich, interactive Sygic Maps at their center.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
     "build": "npm run test && npm run dev && npm run prod && npm run build:main",
