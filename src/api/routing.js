@@ -187,6 +187,7 @@ exports.sendToNavi = {
     ),
     name: validate.string,
     tags: validate.string,
-    directions_api_parameters: exports.directions.validator
+    directions_api_parameters: exports.directions.validator,
+    directions_api_result: validate.string
   })
 };
