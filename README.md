@@ -40,6 +40,7 @@ mapServices.geocode({
 ```
 
 ##Introduction
+
 Online Maps and Directions, Geocoding, Search and route Optimization APIs for web development of Enterprise solutions.
 
 - Here, TomTom, OSM & local maps and data under one roof
@@ -65,6 +66,7 @@ Multi-vehicle and multi-stop sequence optimization using various restrictions an
 [Optimization API](http://www.sygic.com/developers/maps-api-services/optimization-api)
 
 ##Support
+
 Sygic provides professional technical support to developers and software vendors integrating our navigation with the SDK.
 
 Sygic offers professional customer project management support and a team of highly skilled developers able to provide custom solutions and features.
