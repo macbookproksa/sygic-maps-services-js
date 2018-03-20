@@ -39,7 +39,7 @@ mapServices.geocode({
 });
 ```
 
-##Introduction
+## Introduction
 
 Online Maps and Directions, Geocoding, Search and route Optimization APIs for web development of Enterprise solutions.
 
@@ -65,7 +65,7 @@ Route Optimization API
 Multi-vehicle and multi-stop sequence optimization using various restrictions and attributes.
 [Optimization API](http://www.sygic.com/developers/maps-api-services/optimization-api)
 
-##Support
+## Support
 
 Sygic provides professional technical support to developers and software vendors integrating our navigation with the SDK.
 
