@@ -5,7 +5,7 @@
 [![MIT License](https://img.shields.io/npm/l/sygic-maps-services.svg)](http://opensource.org/licenses/MIT)
 [![Release](https://img.shields.io/badge/%F0%9F%9A%80-semantic--release-yellow.svg)](https://github.com/semantic-release/semantic-release)
 
-The Sygic Maps API for JavaScript is a set of programming interfaces that enable developers to build Web applications with feature rich, interactive Sygic Maps at their center.
+The Sygic Maps API for JavaScript is a set of programming interfaces that enable developers to build Web applications with feature rich, interactive [Sygic Maps](http://www.sygic.com/developers/products/sygic-maps-api) at their center.
 
 ## Installation
 
@@ -21,6 +21,9 @@ npm install sygic-maps-services
 
 ```javascript
 var sygicMapsServices = require("sygic-maps-services");
+
+//Or use the global CDN
+//<script src="https://unpkg.com/sygic-maps-services/dist/sygic-maps-services.min.js"></script>
 
 var mapServices = sygicMapsServices.create({
   key: 'apikey'
@@ -38,6 +41,8 @@ mapServices.geocode({
   //console.log(error);
 });
 ```
+
+[More examples](https://github.com/Sygic/sygic-maps-services-js/tree/master/test/results)
 
 ## Introduction
 
