@@ -16,7 +16,7 @@ describe('search', () => {
         query: 'veveri',
         lat: '48.204876',
         lng: 16.351456,
-        includeDetails: true
+        includeDetails: false
       }, (error, response) => {
         expect(error).to.be.null;
         expect(response.status).to.equal(200);
