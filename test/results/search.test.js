@@ -16,7 +16,7 @@ describe('search', () => {
         query: 'veveri',
         lat: '48.204876',
         lng: 16.351456,
-        includeDetails: true
+        includeDetails: false
       }, (error, response) => {
         expect(error).to.be.null;
         expect(response.status).to.equal(200);
@@ -29,7 +29,7 @@ describe('search', () => {
   describe('autocompleteDetail', () => {
     it('valid respone', (done) => {
       sygicServices.autocompleteDetails({
-        resultId: 'CAIQARjj9JUDIPZ0KJcFUgZWRVZFUklgt4GvtwI='
+        resultId: 'uBMAAGx2YQC3wOsmAQAAAAZWRVZFUkl7AQAAAQAAAAIAAAAAAAAA'
       }, (error, response) => {
         expect(error).to.be.null;
         expect(response.status).to.equal(200);

@@ -22,7 +22,7 @@ npm install sygic-maps-services
 ```javascript
 var sygicMapsServices = require("sygic-maps-services");
 
-//Or use the global CDN
+//Or, when you only need to include compiled JS, you can use: 
 //<script src="https://unpkg.com/sygic-maps-services/dist/sygic-maps-services.min.js"></script>
 
 var mapServices = sygicMapsServices.create({
