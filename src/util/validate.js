@@ -18,11 +18,13 @@ function thatNum(predicate, message) {
 
 exports.construct = function(validators) {
   return function(value) {
+    let result = value;
+
     validators.forEach(validate => {
-      validate(value);
+      result = validate(value);
     });
 
-    return value;
+    return result;
   };
 };
 
@@ -63,7 +65,19 @@ exports.time = that(function(value) {
   return value.toString().match(/^(0[0-9]|1[0-9]|2[0-3])[:](0[0-9]|[1-5][0-9])[:](0[0-9]|[1-5][0-9])$/);
 }, 'Invalid date. Valid datetime format is "HH:mm:ss".');
 
-exports.numberRange = function (min, max) {
+exports.regex = function(statement) {
+  let regex = statement;
+
+  return function(value) {
+    if (value.toString().match(regex)) {
+      return value;
+    }
+
+    throw new Error(`Invalid value. Not one of ${statement}`);
+  };
+};
+
+exports.numberRange = function(min, max) {
   return function(value) {
     let num = exports.number(value);
 
@@ -198,6 +212,28 @@ exports.mutuallyExclusive = function(names) {
 
     if (present.length > 1) {
       throw new Error(`Cannot specify properties ${present.slice(0, -1).join(', ')} and ${present.slice(-1)} together`);
+    }
+
+    return value;
+  };
+};
+
+exports.together = function(names) {
+  return function(value) {
+    if (!value) {
+      return value;
+    }
+
+    let present = [];
+
+    names.forEach(function(name) {
+      if (name in value) {
+        present.push(`"${name}"`);
+      }
+    });
+
+    if (present.length !== 0 && present.length !== names.length) {
+      throw new Error(`Specify properties ${names.join(', ')} together`);
     }
 
     return value;
