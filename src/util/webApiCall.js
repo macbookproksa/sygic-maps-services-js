@@ -1,4 +1,5 @@
 import request from 'axios';
+import instanceId  from '../util/instanceId';
 
 exports.webApiCall = function(options) {
   const apiKey = options.key || '';
@@ -6,6 +7,10 @@ exports.webApiCall = function(options) {
   return function(path, query, callback = {}) {
     let queryOptions = query.options || {};
     delete query.options;
+
+    if(queryOptions.uid && !query.id){
+      query.id = instanceId.id;
+    }
 
     if (queryOptions && queryOptions.method === 'POST') {
       request.post(path, query, {
