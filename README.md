@@ -42,7 +42,7 @@ mapServices.geocode({
 });
 ```
 
-[More examples](https://github.com/Sygic/sygic-maps-services-js/tree/master/test/results)
+[More examples](https://github.com/Sygic/sygic-maps-services-js/tree/master/test)
 
 ## Introduction
 
@@ -54,21 +54,20 @@ Online Maps and Directions, Geocoding, Search and route Optimization APIs for we
 - Single source of map data and routing on web and on mobile device
 - Transparent pricing per asset
 
-Maps API
-Embed raster map tiles or fast vector maps with any information and graphics using Custom Layers.
+Maps API - Embed raster map tiles or fast vector maps with any information and graphics using Custom Layers.
 [Maps API](http://www.sygic.com/developers/maps-api-services/javascript-map-api)
 
-Geocoding & Search API
-Find places and addresses, convert them to geo-coordinates, or just see suggestions as you type using Autocomplete.
+Geocoding & Search API - Find places and addresses, convert them to geo-coordinates, or just see suggestions as you type using Autocomplete.
 [Geocoding API](http://www.sygic.com/developers/maps-api-services/geolocation-and-search-api) | [Search API](http://www.sygic.com/developers/maps-api-services/search-api)
 
-Routing API
-Pedestrian, car, RV, bus, delivery van, or truck routing algorithms used by more than 150 million drivers worldwide.
+Routing API - Pedestrian, car, RV, bus, delivery van, or truck routing algorithms used by more than 150 million drivers worldwide.
 [Routing API](http://www.sygic.com/developers/maps-api-services/routing-api)
 
-Route Optimization API
-Multi-vehicle and multi-stop sequence optimization using various restrictions and attributes.
+Route Optimization API - Multi-vehicle and multi-stop sequence optimization using various restrictions and attributes.
 [Optimization API](http://www.sygic.com/developers/maps-api-services/optimization-api)
+
+Analytics API - Map matching lets you snap sets of GPS points to the road network with very high accuracy. Analyze speeding with Speeding report function.
+[Analytics API](http://www.sygic.com/developers/maps-api-services/analytics-api)
 
 ## Support
 
