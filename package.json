@@ -10,7 +10,7 @@
     "source": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "prod": "webpack --mode production --module-bind js=babel-loader --output-filename sygic-maps-services.min.js",
     "dev": "webpack --mode development --module-bind js=babel-loader --output-filename sygic-maps-services.js",
-    "test": "mocha --require babel-core/register --colors ./test/*/*.test.js",
+    "test": "mocha --timeout 10000 --require babel-core/register --colors ./test/*.test.js",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
@@ -25,7 +25,8 @@
     "routing",
     "geocoding",
     "search",
-    "optimization"
+    "optimization",
+    "analytics"
   ],
   "files": [
     "dist",
@@ -42,19 +43,19 @@
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.4",
-    "babel-preset-env": "1.6.1",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
     "cz-conventional-changelog": "2.1.0",
-    "commitizen": "2.9.6",
+    "commitizen": "2.10.1",
     "chai": "4.1.2",
-    "mocha": "5.0.4",
+    "mocha": "5.2.0",
     "rimraf": "2.6.2",
-    "semantic-release": "15.1.2",
-    "travis-deploy-once": "4.4.1",
-    "webpack": "4.1.1",
-    "webpack-cli": "2.0.12"
+    "semantic-release": "15.8.0",
+    "travis-deploy-once": "5.0.1",
+    "webpack": "4.16.1",
+    "webpack-cli": "3.0.8"
   },
   "directories": {
     "test": "test"
