@@ -1,7 +1,8 @@
-import { geocode, geocodeNorthAmerica, reverseGeocode, reverseGeocodeNorthAmerica } from './api/geocoding';
-import { directions, matching, roadInfo, distanceMatrix, sendToNavi } from './api/routing';
+import { geocode, geocodeNorthAmerica, reverseGeocode } from './api/geocoding';
+import { directions, routeMatching, roadInfo, distanceMatrix, sendToNavi } from './api/routing';
 import { autocomplete, autocompleteDetails } from './api/search';
 import { optimization } from './api/optimization';
+import { mapMatching, speedingReport } from './api/analytics';
 import { webApiCall } from './util/webApiCall';
 
 function create(options = {}) {
@@ -20,17 +21,18 @@ function create(options = {}) {
     geocode: createApiMethod(geocode),
     geocodeNorthAmerica: createApiMethod(geocodeNorthAmerica),
     reverseGeocode: createApiMethod(reverseGeocode),
-    reverseGeocodeNorthAmerica: createApiMethod(reverseGeocodeNorthAmerica),
     directions: createApiMethod(directions),
-    matching: createApiMethod(matching),
+    routeMatching: createApiMethod(routeMatching),
     roadInfo: createApiMethod(roadInfo),
     distanceMatrix: createApiMethod(distanceMatrix),
     autocomplete: createApiMethod(autocomplete),
     autocompleteDetails: createApiMethod(autocompleteDetails),
     optimization: createApiMethod(optimization),
-    sendToNavi: createApiMethod(sendToNavi)
+    sendToNavi: createApiMethod(sendToNavi),
+    mapMatching: createApiMethod(mapMatching),
+    speedingReport: createApiMethod(speedingReport)
   };
-};
+}
 
 module.exports = {
   create: create

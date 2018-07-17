@@ -26,7 +26,7 @@ exports.geocodeNorthAmerica = {
 };
 
 exports.reverseGeocode = {
-  url: 'https://geocoding.api.sygic.com/v0/api/reversegeocode',
+  url: 'https://geocoding.api.sygic.com/v1/api/reversegeocode',
   validator: validate.object({
     location: validate.coordinates(
       validate.object({
@@ -35,9 +35,4 @@ exports.reverseGeocode = {
       })
     )
   })
-};
-
-exports.reverseGeocodeNorthAmerica = {
-  url: 'https://na-geocoding.api.sygic.com/v0/api/reversegeocode?',
-  validator: exports.reverseGeocode.validator
 };
