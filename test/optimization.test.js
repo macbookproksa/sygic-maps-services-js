@@ -1,19 +1,19 @@
-import { expect } from 'chai';
-import { optimization } from '../src/api/optimization';
-import services from '../src/index';
+import { expect } from 'chai'
+import { optimization } from '../src/api/optimization'
+import services from '../src/index'
 
 describe('optimization', () => {
 
-  let sygicServices = null;
+  let sygicServices = null
 
   before(() => {
     sygicServices = services.create({
       key: process.env.API_KEY
-    });
-  });
+    })
+  })
 
   describe('optimization', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         optimization.validator({
           settings: {
@@ -308,8 +308,8 @@ describe('optimization', () => {
             ]
           }
         ]
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       expect(() => {
@@ -453,12 +453,12 @@ describe('optimization', () => {
             }
           ]
         }, (error, response) => {
-          expect(error).to.be.null;
-          expect(response.data).to.not.be.null;
-          expect(response.status).to.equal(202);
-          done();
-        });
-      }).to.not.throw();
-    });
-  });
-});
+          expect(error).to.be.null
+          expect(response.data).to.not.be.null
+          expect(response.status).to.equal(202)
+          done()
+        })
+      }).to.not.throw()
+    })
+  })
+})

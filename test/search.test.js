@@ -1,19 +1,19 @@
-import { expect } from 'chai';
-import { autocomplete, autocompleteDetails } from '../src/api/search';
-import services from '../src/index';
+import { expect } from 'chai'
+import { autocomplete, autocompleteDetails } from '../src/api/search'
+import services from '../src/index'
 
 describe('search', () => {
-  let resultId = '';
-  let sygicServices = null;
+  let resultId = ''
+  let sygicServices = null
 
   before(() => {
     sygicServices = services.create({
       key: process.env.API_KEY
-    });
-  });
+    })
+  })
 
   describe('autocomplete', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         autocomplete.validator({
           query: 'Text',
@@ -42,8 +42,8 @@ describe('search', () => {
         regionFilter: 'europe',
         countryFilter: 'deu',
         lang: 'EN-us'
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.autocomplete({
@@ -55,35 +55,35 @@ describe('search', () => {
         boundaryTop: 47.204876,
         boundaryBottom: '48.204876'
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        resultId = response.data[0].id;
-        done();
-      });
-    });
-  });
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        resultId = response.data[0].id
+        done()
+      })
+    })
+  })
 
   describe('autocompleteDetail', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         autocompleteDetails.validator({
           resultId: 'resultId'
         })
       ).to.deep.equal({
         resultId: 'resultId'
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.autocompleteDetails({
         resultId: resultId
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        done();
-      });
-    });
-  });
-});
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        done()
+      })
+    })
+  })
+})

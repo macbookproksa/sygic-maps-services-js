@@ -1,19 +1,19 @@
-import { expect } from 'chai';
-import { directions, routeMatching, roadInfo, distanceMatrix, sendToNavi } from '../src/api/routing';
-import services from '../src/index';
+import { expect } from 'chai'
+import { directions, routeMatching, roadInfo, distanceMatrix, sendToNavi } from '../src/api/routing'
+import services from '../src/index'
 
 describe('routing', () => {
 
-  let sygicServices = null;
+  let sygicServices = null
 
   before(() => {
     sygicServices = services.create({
       key: process.env.API_KEY
-    });
-  });
+    })
+  })
 
   describe('directions', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         directions.validator({
           origin: { lat: '48.11028597523363', lng: -17.12724566459656 },
@@ -92,8 +92,8 @@ describe('routing', () => {
         tunnel: 'b',
         steps: true,
         lang: 'usa'
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       expect(() => {
@@ -140,18 +140,18 @@ describe('routing', () => {
           height_at_first_axle: 300,
           departure_time: 1464691627
         }, (error, response) => {
-          expect(error).to.be.null;
-          expect(response.data).to.not.be.null;
-          expect(response.status).to.equal(200);
-          expect(response.data.routes).to.be.not.empty;
-          done();
-        });
-      }).to.not.throw();
-    });
-  });
+          expect(error).to.be.null
+          expect(response.data).to.not.be.null
+          expect(response.status).to.equal(200)
+          expect(response.data.routes).to.be.not.empty
+          done()
+        })
+      }).to.not.throw()
+    })
+  })
 
   describe('matching', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         routeMatching.validator({
           path: 'gjn~FrhdvOz~AvIbjBlc@v{BzcBdbCzqHrhAl{B',
@@ -160,23 +160,23 @@ describe('routing', () => {
       ).to.deep.equal({
         path: 'gjn~FrhdvOz~AvIbjBlc@v{BzcBdbCzqHrhAl{B',
         waypoint_indexes: 'index'
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.routeMatching({
         path: 'gjn~FrhdvOz~AvIbjBlc@v{BzcBdbCzqHrhAl{B'
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        done();
-      });
-    });
-  });
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        done()
+      })
+    })
+  })
 
   describe('roadinfo', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         roadInfo.validator({
           lat: '-48.15021',
@@ -189,8 +189,8 @@ describe('routing', () => {
         lng: 17.12543,
         time: 1000,
         vehicle_heading: 100
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.roadInfo({
@@ -199,16 +199,16 @@ describe('routing', () => {
         time: Math.floor(Date.now() / 1000),
         vehicle_heading: 99
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        done();
-      });
-    });
-  });
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        done()
+      })
+    })
+  })
 
   describe('distanceMatrix', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         distanceMatrix.validator({
           origins: [
@@ -233,8 +233,8 @@ describe('routing', () => {
         units: 'metric',
         vehicle_type: 'car',
         max_speed: 100
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.distanceMatrix({
@@ -249,16 +249,16 @@ describe('routing', () => {
           { lat: 48.12532, lng: 17.097 }
         ]
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        done();
-      });
-    });
-  });
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        done()
+      })
+    })
+  })
 
   describe('sendToNavi', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         sendToNavi.validator({
           message: 'Message',
@@ -409,8 +409,8 @@ describe('routing', () => {
             }
           }]
         }
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.sendToNavi({
@@ -492,10 +492,10 @@ describe('routing', () => {
           }]
         }
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        done();
-      });
-    });
-  });
-});
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        done()
+      })
+    })
+  })
+})

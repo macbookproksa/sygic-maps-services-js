@@ -1,4 +1,4 @@
-import * as validate from '../util/validate';
+import * as validate from '../util/validate'
 
 exports.optimization = {
   url: 'https://optimization.api.sygic.com/v0/api/optimization',
@@ -84,4 +84,4 @@ exports.optimization = {
       })
     )
   })
-};
+}

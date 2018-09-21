@@ -1,4 +1,4 @@
-import * as validate from '../util/validate';
+import * as validate from '../util/validate'
 
 exports.mapMatching = {
   url: 'https://analytics.api.sygic.com/v1/api/matching',
@@ -32,7 +32,7 @@ exports.mapMatching = {
       units: validate.optional(validate.oneOf(['metric', 'imperial']))
     })
   ])
-};
+}
 
 exports.speedingReport = {
   url: 'https://analytics.api.sygic.com/v0/api/speeding',
@@ -65,4 +65,4 @@ exports.speedingReport = {
     ),
     units: validate.optional(validate.oneOf(['metric', 'imperial']))
   })
-};
+}

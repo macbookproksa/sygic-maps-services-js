@@ -1,4 +1,4 @@
-import * as validate from '../util/validate';
+import * as validate from '../util/validate'
 
 exports.geocode = {
   url: 'https://geocoding.api.sygic.com/v0/api/geocode',
@@ -18,12 +18,12 @@ exports.geocode = {
       admin_level_1: validate.optional(validate.string)
     })
   ])
-};
+}
 
 exports.geocodeNorthAmerica = {
   url: 'https://na-geocoding.api.sygic.com/v0/api/geocode?',
   validator: exports.geocode.validator
-};
+}
 
 exports.reverseGeocode = {
   url: 'https://geocoding.api.sygic.com/v1/api/reversegeocode',
@@ -35,4 +35,4 @@ exports.reverseGeocode = {
       })
     )
   })
-};
+}

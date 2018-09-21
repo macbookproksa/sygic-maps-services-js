@@ -1,18 +1,18 @@
-import { expect } from 'chai';
-import { mapMatching, speedingReport } from '../src/api/analytics';
-import services from '../src/index';
+import { expect } from 'chai'
+import { mapMatching, speedingReport } from '../src/api/analytics'
+import services from '../src/index'
 
 describe('analytics', () => {
-  let sygicServices = null;
+  let sygicServices = null
 
   before(() => {
     sygicServices = services.create({
       key: process.env.API_KEY
-    });
-  });
+    })
+  })
 
   describe('mapMatching', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         mapMatching.validator({
           path: 'wsfxHzxsC??@FFv@EZu@~@???@aDzAKAm@HCPF^V^t@ZvFgE`KmLjEuH??NE^NNNzBz@VIjAmBiCcUcH_YuIsXaKeXyKwWgLcVoLmU',
@@ -25,10 +25,10 @@ describe('analytics', () => {
         accuracies: [9, 9, 10, 10, 10, 11, 11, 11, 11, 10, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 9, 11, 10, 11, 11, 11, 11, 11, 11, 11, 9],
         timestamps: [1464691627, 1464691698],
         units: 'metric'
-      });
-    });
+      })
+    })
 
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         mapMatching.validator({
           coordinates: [
@@ -45,12 +45,12 @@ describe('analytics', () => {
         accuracies: [9, 9, 10, 10, 10, 11, 11, 11, 11, 10, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 9, 11, 10, 11, 11, 11, 11, 11, 11, 11, 9],
         timestamps: [1464691627, 1464691698],
         units: 'metric'
-      });
-    });
+      })
+    })
 
-    it('should return an error if path and coordinates is defined', function() {
+    it('should return an error if path and coordinates is defined', function () {
       expect(
-        function() {
+        function () {
           return mapMatching.validator({
             path: 'wsfxHzxsC??@FFv@EZu@~@???@aDzAKAm@HCPF^V^t@ZvFgE`KmLjEuH??NE^NNNzBz@VIjAmBiCcUcH_YuIsXaKeXyKwWgLcVoLmU',
             coordinates: [
@@ -58,26 +58,26 @@ describe('analytics', () => {
               { lat: 48.14306, lng: '-17.12216' },
               { lat: -48.1577, lng: 17.16626 }
             ]
-          });
+          })
         }
-      ).to.throw('Cannot specify properties "path" and "coordinates" together');
-    });
+      ).to.throw('Cannot specify properties "path" and "coordinates" together')
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.mapMatching({
         path: 'wsfxHzxsC??@FFv@EZu@~@???@aDzAKAm@HCPF^V^t@ZvFgE`KmLjEuH??NE^NNNzBz@VIjAmBiCcUcH_YuIsXaKeXyKwWgLcVoLmU',
         accuracies: [9, 9, 10, 10, 10, 11, 11, 11, 11, 10, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 9, 11, 10, 11, 11, 11, 11, 11, 11, 11, 9]
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        done();
-      });
-    });
-  });
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        done()
+      })
+    })
+  })
 
   describe('speedingReport', () => {
-    it('should return a valid query', function() {
+    it('should return a valid query', function () {
       expect(
         speedingReport.validator({
           coordinates: [
@@ -96,8 +96,8 @@ describe('analytics', () => {
         speeds: [48, 48, 48],
         timestamps: [1464691627, 1464691698],
         units: 'metric'
-      });
-    });
+      })
+    })
 
     it('should return a valid respone', (done) => {
       sygicServices.speedingReport({
@@ -111,11 +111,11 @@ describe('analytics', () => {
         timestamps: [1464691627, 1464691698, 1464691699],
         units: 'metric'
       }, (error, response) => {
-        expect(error).to.be.null;
-        expect(response.status).to.equal(200);
-        expect(response.data).to.be.not.empty;
-        done();
-      });
-    });
-  });
-});
+        expect(error).to.be.null
+        expect(response.status).to.equal(200)
+        expect(response.data).to.be.not.empty
+        done()
+      })
+    })
+  })
+})

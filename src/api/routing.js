@@ -1,4 +1,4 @@
-import * as validate from '../util/validate';
+import * as validate from '../util/validate'
 
 exports.directions = {
   url: 'https://routing.api.sygic.com/v0/api/directions',
@@ -71,7 +71,7 @@ exports.directions = {
     steps: validate.optional(validate.bool),
     lang: validate.optional(validate.string)
   })
-};
+}
 
 exports.routeMatching = {
   url: 'https://routing.api.sygic.com/v0/api/matching',
@@ -82,7 +82,7 @@ exports.routeMatching = {
     path: validate.string,
     waypoint_indexes: validate.optional(validate.string)
   })
-};
+}
 
 exports.roadInfo = {
   url: 'https://routing.api.sygic.com/v0/api/roadinfo',
@@ -92,7 +92,7 @@ exports.roadInfo = {
     time: validate.optional(validate.positiveNumber),
     vehicle_heading: validate.optional(validate.numberRange(0, 359))
   })
-};
+}
 
 exports.distanceMatrix = {
   url: 'https://routing.api.sygic.com/v0/api/distancematrix',
@@ -121,7 +121,7 @@ exports.distanceMatrix = {
     vehicle_type: validate.optional(validate.oneOf(['car', 'truck'])),
     max_speed: validate.optional(validate.numberRange(1, 255))
   })
-};
+}
 
 exports.sendToNavi = {
   url: 'https://routing.api.sygic.com/v0/api/sendtonavi',
@@ -155,4 +155,4 @@ exports.sendToNavi = {
       )
     })
   })
-};
+}

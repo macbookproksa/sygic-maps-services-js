@@ -1,4 +1,4 @@
-import * as validate from '../util/validate';
+import * as validate from '../util/validate'
 
 exports.autocomplete = {
   url: 'https://search.api.sygic.com/v0/api/autocomplete',
@@ -22,9 +22,9 @@ exports.autocomplete = {
       lang: validate.optional(validate.string)
     })
   ])
-};
+}
 
 exports.autocompleteDetails = {
   url: 'https://search.api.sygic.com/v0/api/details',
   validator: validate.object({ resultId: validate.string })
-};
+}
