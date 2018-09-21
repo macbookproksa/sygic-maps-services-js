@@ -18,8 +18,6 @@ describe('routing', () => {
         directions.validator({
           origin: { lat: '48.11028597523363', lng: -17.12724566459656 },
           destination: { lat: 48.28490634600474, lng: '17.73373603820801' },
-          toll_costs: true,
-          toll_segments: true,
           speed_profiles: true,
           traffic: false,
           waypoints: [
@@ -70,8 +68,6 @@ describe('routing', () => {
       ).to.deep.equal({
         origin: '48.11028597523363,-17.12724566459656',
         destination: '48.28490634600474,17.73373603820801',
-        toll_costs: true,
-        toll_segments: true,
         speed_profiles: true,
         waypoints: '48.21094727794912,17.25565910339356,0|-48.21462203499331,17.38444805145264,0|48.2050556774789,17.418479919433597,600|via:48.202123924724624,17.528600692749027,0|48.241824189703564,-17.697687149047855,600',
         avoid: 'cze:unpaved|ferries|deu:country',
@@ -104,8 +100,6 @@ describe('routing', () => {
         sygicServices.directions({
           origin: { lat: '48.11028597523363', lng: 17.12724566459656 },
           destination: { lat: 48.28490634600474, lng: '17.73373603820801' },
-          toll_costs: true,
-          toll_segments: true,
           speed_profiles: true,
           traffic: false,
           waypoints: [
@@ -202,7 +196,7 @@ describe('routing', () => {
       sygicServices.roadInfo({
         lat: '48.15021',
         lng: 17.12543,
-        time: 0,
+        time: Math.floor(Date.now() / 1000),
         vehicle_heading: 99
       }, (error, response) => {
         expect(error).to.be.null;

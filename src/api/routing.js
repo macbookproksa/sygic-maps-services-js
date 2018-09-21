@@ -18,7 +18,6 @@ exports.directions = {
         lng: validate.longitude
       })
     ),
-    toll_costs: validate.optional(validate.bool),
     waypoints: validate.optional(
       validate.pipedArrayOf(
         validate.waypoints(
@@ -48,7 +47,6 @@ exports.directions = {
     vehicle_heading: validate.optional(validate.numberRange(0, 359)),
     speed_profiles: validate.optional(validate.bool),
     traffic: validate.optional(validate.bool),
-    toll_segments: validate.optional(validate.bool),
     vehicle_type: validate.optional(validate.oneOf(['car', 'camper', 'van', 'truck', 'pedestrian'])),
     route_computing: validate.optional(validate.oneOf(['fastest', 'shortest', 'economic'])),
     compute_alternatives: validate.optional(validate.bool),
