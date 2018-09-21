@@ -4,7 +4,7 @@ node_js:
   - stable
 cache:
   directories:
-    - $HOME/.npm
+    - node_modules
 env:
   - ApiKey=$API_KEY
 branches:
