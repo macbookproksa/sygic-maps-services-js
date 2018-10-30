@@ -16,7 +16,7 @@ function thatNum (predicate, message) {
   }
 }
 
-exports.construct = function (validators) {
+export function construct(validators) {
   return function (value) {
     let result = value
 
@@ -28,19 +28,19 @@ exports.construct = function (validators) {
   }
 }
 
-exports.number = that(function (value) {
+export let number = that(function (value) {
   return typeof value === 'number'
 }, 'Not a number.')
 
-exports.positiveNumber = that(function (value) {
+export let positiveNumber = that(function (value) {
   return (typeof value === 'number' && value >= 0)
 }, 'Not a number.')
 
-exports.string = that(function (value) {
+export let string = that(function (value) {
   return typeof value === 'string'
 }, 'Not a string.')
 
-exports.bool = exports.construct([
+export let bool = construct([
   that(function (value) {
     return typeof value === 'boolean'
   }, 'Not a boolean.'),
@@ -49,23 +49,23 @@ exports.bool = exports.construct([
   }
 ])
 
-exports.latitude = thatNum(function (value) {
+export let latitude = thatNum(function (value) {
   return value.toString().match(/^([+\-])?(?:90(?:(?:\.0{1,23})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,23})?))$/)
 }, 'Invalid latitude. Valid range of latitude in degrees is -90 and +90.')
 
-exports.longitude = thatNum(function (value) {
+export let longitude = thatNum(function (value) {
   return value.toString().match(/^([+\-])?(?:180(?:(?:\.0{1,23})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,23})?))$/)
 }, 'Invalid longitude. Valid range of latitude in degrees is -180 and +180.')
 
-exports.dateTimeISO8601 = that(function (value) {
+export let dateTimeISO8601 = that(function (value) {
   return value.toString().match(/^(19|20)\d\d[-](0[1-9]|1[0-2])[-](0[1-9]|[1|2][0-9]|3[0-1])[T](0[0-9]|1[0-9]|2[0-3])[:](0[0-9]|[1-5][0-9])[:](0[0-9]|[1-5][0-9])$/)
 }, 'Invalid date. Valid datetime format is "yyyy-MM-ddTHH:mm:ss".')
 
-exports.time = that(function (value) {
+export let time = that(function (value) {
   return value.toString().match(/^(0[0-9]|1[0-9]|2[0-3])[:](0[0-9]|[1-5][0-9])[:](0[0-9]|[1-5][0-9])$/)
 }, 'Invalid date. Valid datetime format is "HH:mm:ss".')
 
-exports.regex = function (statement) {
+export function regex(statement) {
   let regex = statement
 
   return function (value) {
@@ -77,9 +77,9 @@ exports.regex = function (statement) {
   }
 }
 
-exports.numberRange = function (min, max) {
+export function numberRange(min, max) {
   return function (value) {
-    let num = exports.number(value)
+    let num = number(value)
 
     if (num >= min && num <= max) {
       return num
@@ -89,13 +89,13 @@ exports.numberRange = function (min, max) {
   }
 }
 
-exports.optional = function (validator) {
+export function optional(validator) {
   return function (value) {
     return (value === undefined) ? value : validator(value)
   }
 }
 
-exports.object = function (propValidators) {
+export function object(propValidators) {
   return function (object) {
     let result = {}
 
@@ -140,7 +140,7 @@ exports.object = function (propValidators) {
   }
 }
 
-exports.array = function (validator) {
+export function array(validator) {
   return function (array) {
     if (Object.prototype.toString.call(array) !== '[object Array]') {
       throw new Error('Not an Array')
@@ -156,7 +156,7 @@ exports.array = function (validator) {
   }
 }
 
-exports.coordinates = function (validator) {
+export function coordinates(validator) {
   return function (value) {
     if (!value) {
       throw new Error('Invalid coordinates')
@@ -166,7 +166,7 @@ exports.coordinates = function (validator) {
   }
 }
 
-exports.waypoints = function (validator) {
+export function waypoints(validator) {
   return function (value) {
     if (!value) {
       throw new Error('Invalid coordinates')
@@ -178,7 +178,7 @@ exports.waypoints = function (validator) {
   }
 }
 
-exports.oneOf = function (names) {
+export function oneOf(names) {
   let myObject = {}
   let quotedNames = []
 
@@ -196,7 +196,7 @@ exports.oneOf = function (names) {
   }
 }
 
-exports.mutuallyExclusive = function (names) {
+export function mutuallyExclusive(names) {
   return function (value) {
     if (!value) {
       return value
@@ -218,7 +218,7 @@ exports.mutuallyExclusive = function (names) {
   }
 }
 
-exports.together = function (names) {
+export function together(names) {
   return function (value) {
     if (!value) {
       return value
@@ -240,24 +240,24 @@ exports.together = function (names) {
   }
 }
 
-exports.pipedArrayOf = function (validateItem) {
-  let validateArray = exports.array(validateItem)
+export function pipedArrayOf(validateItem) {
+  let validateArray = array(validateItem)
   return function (value) {
     let result = validateArray(value)
     return result.join('|')
   }
 }
 
-exports.semicolonArrayOf = function (validateItem) {
-  let validateArray = exports.array(validateItem)
+export function semicolonArrayOf(validateItem) {
+  let validateArray = array(validateItem)
   return function (value) {
     let result = validateArray(value)
     return result.join(';')
   }
 }
 
-exports.stringArrayOf = function (validateItem) {
-  let validateArray = exports.array(validateItem)
+export function stringArrayOf(validateItem) {
+  let validateArray = array(validateItem)
   return function (value) {
     return validateArray(value)
   }

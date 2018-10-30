@@ -1,6 +1,6 @@
 import * as validate from '../util/validate'
 
-exports.optimization = {
+export let optimization = {
   url: 'https://optimization.api.sygic.com/v0/api/optimization',
   options: {
     method: 'POST'

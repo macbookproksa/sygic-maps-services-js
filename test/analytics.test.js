@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { mapMatching, speedingReport } from '../src/api/analytics'
-import services from '../src/index'
+import * as services from '../src/index'
 
 describe('analytics', () => {
   let sygicServices = null

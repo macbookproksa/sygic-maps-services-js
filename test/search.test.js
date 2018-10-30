@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { autocomplete, autocompleteDetails } from '../src/api/search'
-import services from '../src/index'
+import * as services from '../src/index'
 
 describe('search', () => {
   let resultId = ''

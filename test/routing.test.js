@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { directions, routeMatching, roadInfo, distanceMatrix, sendToNavi } from '../src/api/routing'
-import services from '../src/index'
+import * as services from '../src/index'
 
 describe('routing', () => {
 

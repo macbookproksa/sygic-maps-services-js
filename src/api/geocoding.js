@@ -1,6 +1,6 @@
 import * as validate from '../util/validate'
 
-exports.geocode = {
+export let geocode = {
   url: 'https://geocoding.api.sygic.com/v0/api/geocode',
   validator: validate.construct([
     validate.mutuallyExclusive(['location', 'country']),
@@ -20,12 +20,12 @@ exports.geocode = {
   ])
 }
 
-exports.geocodeNorthAmerica = {
+export let geocodeNorthAmerica = {
   url: 'https://na-geocoding.api.sygic.com/v0/api/geocode?',
-  validator: exports.geocode.validator
+  validator: geocode.validator
 }
 
-exports.reverseGeocode = {
+export let reverseGeocode = {
   url: 'https://geocoding.api.sygic.com/v1/api/reversegeocode',
   validator: validate.object({
     location: validate.coordinates(

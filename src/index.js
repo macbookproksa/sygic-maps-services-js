@@ -34,6 +34,4 @@ function create (options = {}) {
   }
 }
 
-module.exports = {
-  create: create
-}
+export { create }

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { optimization } from '../src/api/optimization'
-import services from '../src/index'
+import * as services from '../src/index'
 
 describe('optimization', () => {
 

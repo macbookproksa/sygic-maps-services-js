@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { geocode, reverseGeocode } from '../src/api/geocoding'
-import services from '../src/index'
+import * as services from '../src/index'
 
 describe('geocoding', () => {
 

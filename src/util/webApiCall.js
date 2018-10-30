@@ -1,7 +1,7 @@
 import request from 'axios'
 import instanceId from '../util/instanceId'
 
-exports.webApiCall = function (options) {
+export function webApiCall(options) {
   const apiKey = options.key || ''
 
   return function (path, query, callback = {}) {

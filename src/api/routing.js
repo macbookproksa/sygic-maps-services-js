@@ -1,6 +1,6 @@
 import * as validate from '../util/validate'
 
-exports.directions = {
+export let directions = {
   url: 'https://routing.api.sygic.com/v0/api/directions',
   options: {
     method: 'POST'
@@ -73,7 +73,7 @@ exports.directions = {
   })
 }
 
-exports.routeMatching = {
+export let routeMatching = {
   url: 'https://routing.api.sygic.com/v0/api/matching',
   options: {
     method: 'POST'
@@ -84,7 +84,7 @@ exports.routeMatching = {
   })
 }
 
-exports.roadInfo = {
+export let roadInfo = {
   url: 'https://routing.api.sygic.com/v0/api/roadinfo',
   validator: validate.object({
     lat: validate.latitude,
@@ -94,7 +94,7 @@ exports.roadInfo = {
   })
 }
 
-exports.distanceMatrix = {
+export let distanceMatrix = {
   url: 'https://routing.api.sygic.com/v0/api/distancematrix',
   options: {
     method: 'POST'
@@ -123,7 +123,7 @@ exports.distanceMatrix = {
   })
 }
 
-exports.sendToNavi = {
+export let sendToNavi = {
   url: 'https://routing.api.sygic.com/v0/api/sendtonavi',
   options: {
     method: 'POST'
@@ -132,7 +132,7 @@ exports.sendToNavi = {
     name: validate.string,
     tags: validate.regex(/^(login_|id_)\w+$/),
     message: validate.string,
-    directions_api_parameters: exports.directions.validator,
+    directions_api_parameters: directions.validator,
     directions_api_result: validate.object({
       route: validate.string,
       legs: validate.array(

@@ -1,6 +1,6 @@
 import * as validate from '../util/validate'
 
-exports.mapMatching = {
+export let mapMatching = {
   url: 'https://analytics.api.sygic.com/v1/api/matching',
   options: {
     method: 'POST'
@@ -34,7 +34,7 @@ exports.mapMatching = {
   ])
 }
 
-exports.speedingReport = {
+export let speedingReport = {
   url: 'https://analytics.api.sygic.com/v0/api/speeding',
   options: {
     method: 'POST'

@@ -1,6 +1,6 @@
 import * as validate from '../util/validate'
 
-exports.autocomplete = {
+export let autocomplete = {
   url: 'https://search.api.sygic.com/v0/api/autocomplete',
   options: {
     uid: true
@@ -24,7 +24,7 @@ exports.autocomplete = {
   ])
 }
 
-exports.autocompleteDetails = {
+export let autocompleteDetails = {
   url: 'https://search.api.sygic.com/v0/api/details',
   validator: validate.object({ resultId: validate.string })
 }
