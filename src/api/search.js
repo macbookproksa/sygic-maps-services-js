@@ -10,7 +10,7 @@ exports.autocomplete = {
     validate.object({
       query: validate.string,
       lat: validate.optional(validate.latitude),
-      lng: validate.optional(validate.longitude),
+      lon: validate.optional(validate.longitude),
       boundaryLeft: validate.optional(validate.longitude),
       boundaryRight: validate.optional(validate.longitude),
       boundaryTop: validate.optional(validate.latitude),

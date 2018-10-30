@@ -18,7 +18,7 @@ describe('search', () => {
         autocomplete.validator({
           query: 'Text',
           lat: '-48.15021',
-          lng: 17.12543,
+          lon: 17.12543,
           boundaryLeft: 16.351456,
           boundaryRight: '17.351456',
           boundaryTop: 47.204876,
@@ -32,7 +32,7 @@ describe('search', () => {
       ).to.deep.equal({
         query: 'Text',
         lat: -48.15021,
-        lng: 17.12543,
+        lon: 17.12543,
         boundaryLeft: 16.351456,
         boundaryRight: 17.351456,
         boundaryTop: 47.204876,
@@ -49,7 +49,7 @@ describe('search', () => {
       sygicServices.autocomplete({
         query: 'veveri',
         lat: '48.204876',
-        lng: 16.351456,
+        lon: 16.351456,
         boundaryLeft: 16.351456,
         boundaryRight: '17.351456',
         boundaryTop: 47.204876,
