@@ -43,7 +43,6 @@ export let directions = {
         )
       )
     ),
-    avoid_countries: validate.optional(validate.pipedArrayOf(validate.string)),
     vehicle_heading: validate.optional(validate.numberRange(0, 359)),
     speed_profiles: validate.optional(validate.bool),
     traffic: validate.optional(validate.bool),

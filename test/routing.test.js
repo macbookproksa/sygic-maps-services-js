@@ -39,7 +39,6 @@ describe('routing', () => {
               { lat: '48.15028286718964', lng: 17.19995498657227 },
               { lat: 48.15028286718964, lng: -17.165279388427738 }]
           ],
-          avoid_countries: ['ger', 'hun'],
           vehicle_heading: 90,
           vehicle_type: 'truck',
           route_computing: 'fastest',
@@ -72,7 +71,6 @@ describe('routing', () => {
         waypoints: '48.21094727794912,17.25565910339356,0|-48.21462203499331,17.38444805145264,0|48.2050556774789,17.418479919433597,600|via:48.202123924724624,17.528600692749027,0|48.241824189703564,-17.697687149047855,600',
         avoid: 'cze:unpaved|ferries|deu:country',
         avoid_rectangles: '48.148564905217164,17.156181335449222|-48.12702823764068,17.156181335449222;-48.16116195751926,17.165279388427738|48.16116195751926,17.19995498657227|48.15028286718964,17.19995498657227|48.15028286718964,-17.165279388427738',
-        avoid_countries: 'ger|hun',
         vehicle_heading: 90,
         vehicle_type: 'truck',
         route_computing: 'fastest',
@@ -114,7 +112,6 @@ describe('routing', () => {
               { lat: 48.164711477297736, lng: '17.259521484375004' }
             ]
           ],
-          avoid_countries: ['AUT'],
           vehicle_heading: 90,
           vehicle_type: 'truck',
           route_computing: 'fastest',
@@ -288,7 +285,6 @@ describe('routing', () => {
                 { lat: '48.15028286718964', lng: 17.19995498657227 },
                 { lat: 48.15028286718964, lng: -17.165279388427738 }]
             ],
-            avoid_countries: ['ger', 'hun'],
             vehicle_heading: 90,
             vehicle_type: 'car',
             route_computing: 'fastest',
@@ -357,7 +353,6 @@ describe('routing', () => {
           waypoints: '48.21094727794912,17.25565910339356,0|-48.21462203499331,17.38444805145264,0|48.2050556774789,17.418479919433597,600|via:48.202123924724624,17.528600692749027,0|48.241824189703564,-17.697687149047855,600',
           avoid: 'unpaved|ferries',
           avoid_rectangles: '48.148564905217164,17.156181335449222|-48.12702823764068,17.156181335449222;-48.16116195751926,17.165279388427738|48.16116195751926,17.19995498657227|48.15028286718964,17.19995498657227|48.15028286718964,-17.165279388427738',
-          avoid_countries: 'ger|hun',
           vehicle_heading: 90,
           vehicle_type: 'car',
           route_computing: 'fastest',
@@ -434,7 +429,6 @@ describe('routing', () => {
               { lat: 48.164711477297736, lng: '17.259521484375004' }
             ]
           ],
-          avoid_countries: ['AUT'],
           vehicle_heading: 90,
           vehicle_type: 'car',
           route_computing: 'fastest',
