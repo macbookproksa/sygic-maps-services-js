@@ -76,9 +76,9 @@ describe('geocoding', () => {
     it('should return a valid respone', (done) => {
       expect(() => {
         sygicServices.geocode({
-          country: 'Deutschland',
+          country: 'Germany',
           city: 'Berlin',
-          street: 'Bernauer Strasse',
+          street: 'Bernauer Straße',
           house_number: '12',
           zip: '13355',
           admin_level_1: 'Berlin'

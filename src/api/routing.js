@@ -46,7 +46,7 @@ export let directions = {
     vehicle_heading: validate.optional(validate.numberRange(0, 359)),
     speed_profiles: validate.optional(validate.bool),
     traffic: validate.optional(validate.bool),
-    vehicle_type: validate.optional(validate.oneOf(['car', 'camper', 'van', 'truck', 'pedestrian'])),
+    vehicle_type: validate.optional(validate.oneOf(['car', 'camper', 'van', 'truck', 'pedestrian', 'garbagetruck'])),
     route_computing: validate.optional(validate.oneOf(['fastest', 'shortest', 'economic'])),
     compute_alternatives: validate.optional(validate.bool),
     units: validate.optional(validate.oneOf(['metric', 'imperial'])),
@@ -64,11 +64,7 @@ export let directions = {
     trailer_axles: validate.optional(validate.positiveNumber),
     general_hazard: validate.optional(validate.bool),
     water_hazard: validate.optional(validate.bool),
-    emission_class: validate.optional(validate.oneOf(['euro0', 'euro1', 'euro2', 'euro2', 'euro3', 'euro4', 'euro5', 'euro6', 'euroev'])),
-    height_at_first_axle: validate.optional(validate.positiveNumber),
     tunnel: validate.optional(validate.oneOf(['b', 'c', 'd', 'e'])),
-    steps: validate.optional(validate.bool),
-    lang: validate.optional(validate.string)
   })
 }
 
